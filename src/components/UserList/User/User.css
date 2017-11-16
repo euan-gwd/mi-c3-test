@@ -1,5 +1,11 @@
-.grid-table-data,
 .grid-table-headers {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  box-sizing: border-box;
+  text-decoration: underline;
+}
+
+.grid-table-data {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: 50px;
