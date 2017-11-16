@@ -1,0 +1,16 @@
+{
+  "name": "mi-c3-test",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "amwic-react-scripts": "1.2.8",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
