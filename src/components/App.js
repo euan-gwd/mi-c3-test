@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
+import UserList from './UserList';
 
 class App extends Component {
   state = { users: [] };
@@ -18,11 +19,11 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Custom React Starter Kit</h1>
+          <h1 className="App-title">Mi-C3 FED Test App</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/components/App.js</code> and save to reload.
-        </p>
+        <main>
+          <UserList users={this.state.users} />
+        </main>
       </div>
     );
   }
