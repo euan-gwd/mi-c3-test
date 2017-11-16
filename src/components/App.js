@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
-import UserList from './UserList';
+import UserList from './UserList/UserList';
 
 class App extends Component {
   state = { users: [] };
