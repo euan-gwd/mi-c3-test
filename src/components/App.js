@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import axios from 'axios';
 import './App.css';
 
 class App extends Component {
   state = { users: [] };
 
   componentDidMount = () => {
-    const fetchData = async () => {
-      const url = `https://swapi.co/api/people`;
-      const response = await fetch(url);
-      const body = await response.json();
-      if (response.status !== 200) {
-        throw Error(body.message);
-      }
-      return body;
-    };
-
-    fetchData().then(res => {
-      this.setState({ users: res.result });
+    axios.get(`https://swapi.co/api/people`).then(res => {
+      const usersData = res.data.results;
+      this.setState({ users: usersData });
     });
   };
 
