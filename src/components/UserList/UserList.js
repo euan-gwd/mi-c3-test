@@ -11,7 +11,7 @@ const UserList = ({ users }) => {
         <div>Mass</div>
         <div>Created</div>
         <div>Edited</div>
-        <div>Planet</div>
+        <div>Homeworld</div>
       </div>
       <div>{users.map(user => <User key={user.name} userInfo={user} />)}</div>
     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { format } from 'date-fns';
 import './User.css';
 
 const User = ({ userInfo }) => {
@@ -7,9 +8,9 @@ const User = ({ userInfo }) => {
       <div>{userInfo.name}</div>
       <div>{userInfo.height}cm</div>
       <div>{userInfo.mass}kg</div>
-      <div>{userInfo.created}</div>
-      <div>{userInfo.edited}</div>
-      <a linkto={userInfo.homeworld}>Planet of Origin</a>
+      <div>{format(userInfo.created, 'DD/MM/YYYY HH:mm:ss')}</div>
+      <div>{format(userInfo.edited, 'DD/MM/YYYY HH:mm:ss')}</div>
+      <a link={userInfo.homeworld}>View</a>
     </div>
   );
 };

@@ -19,7 +19,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Mi-C3 FED Test App</h1>
+          <h1 className="App-title">Mi-C3 FED App</h1>
         </header>
         <main>
           <UserList users={this.state.users} />
