@@ -8,13 +8,11 @@ class UserList extends Component {
 
   componentDidMount = () => {
     axios.get(`https://swapi.co/api/people`).then(res => {
-      const usersData = res.data.results;
-      this.setState({ users: usersData });
+      this.setState({ users: res.data.results });
     });
   };
 
   render() {
-    const { users } = this.state;
     return (
       <div className="table">
         <div className="user-grid-headers">
@@ -25,7 +23,7 @@ class UserList extends Component {
           <div>Edited</div>
           <div>Homeworld</div>
         </div>
-        <div>{users.map(user => <User key={user.name} userInfo={user} />)}</div>
+        <div>{this.state.users.map(user => <User key={user.name} userInfo={user} />)}</div>
       </div>
     );
   }
