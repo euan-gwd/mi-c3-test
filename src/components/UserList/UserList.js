@@ -4,11 +4,12 @@ import User from './User/User';
 import './UserList.css';
 
 class UserList extends Component {
-  state = { users: [] };
+  state = { users: [], nextUrl: null };
 
   componentDidMount = () => {
-    axios.get(`https://swapi.co/api/people`).then(res => {
-      this.setState({ users: res.data.results });
+    const url = `https://swapi.co/api/people`;
+    axios.get(url).then(res => {
+      this.setState({ users: res.data.results, nextUrl: res.data.next });
     });
   };
 
@@ -21,9 +22,12 @@ class UserList extends Component {
           <div>Mass</div>
           <div>Created</div>
           <div>Edited</div>
-          <div>Homeworld</div>
+          <div>Planet</div>
         </div>
         <div>{this.state.users.map(user => <User key={user.name} userInfo={user} />)}</div>
+        <nav className="navbar">
+          <button className="nextBtn">Next Page>></button>
+        </nav>
       </div>
     );
   }
