@@ -1,19 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import axios from 'axios';
 import './App.css';
 import UserList from './UserList/UserList';
 
 class App extends Component {
-  state = { users: [] };
-
-  componentDidMount = () => {
-    axios.get(`https://swapi.co/api/people`).then(res => {
-      const usersData = res.data.results;
-      this.setState({ users: usersData });
-    });
-  };
-
+  state = {};
   render() {
     return (
       <div className="App">
@@ -22,7 +13,7 @@ class App extends Component {
           <h1 className="App-title">Mi-C3 FED App</h1>
         </header>
         <main>
-          <UserList users={this.state.users} />
+          <UserList />
         </main>
       </div>
     );
