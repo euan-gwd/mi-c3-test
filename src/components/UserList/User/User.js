@@ -19,7 +19,7 @@ class User extends Component {
     const { userInfo } = this.props;
     return (
       <div>
-        <div className="grid-table-data">
+        <div className="user-grid-data">
           <div>{userInfo.name}</div>
           <div>{userInfo.height}cm</div>
           <div>{userInfo.mass}kg</div>

@@ -5,7 +5,7 @@ import './UserList.css';
 const UserList = ({ users }) => {
   return (
     <div className="table">
-      <div className="grid-table-headers">
+      <div className="user-grid-headers">
         <div>Name</div>
         <div>Height</div>
         <div>Mass</div>
