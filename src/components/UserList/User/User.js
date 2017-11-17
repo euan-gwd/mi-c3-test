@@ -5,7 +5,16 @@ import Planet from '../Planet/Planet';
 import './User.css';
 
 class User extends Component {
-  state = {};
+  state = { showModal: false };
+
+  handleModalOpen = () => {
+    this.setState({ showModal: true });
+  };
+
+  handleModalClose = () => {
+    this.setState({ showModal: false });
+  };
+
   render() {
     const { userInfo } = this.props;
     return (
@@ -16,9 +25,11 @@ class User extends Component {
           <div>{userInfo.mass}kg</div>
           <div>{format(userInfo.created, 'DD/MM/YYYY HH:mm:ss')}</div>
           <div>{format(userInfo.edited, 'DD/MM/YYYY HH:mm:ss')}</div>
-          <a>View</a>
+          <button className="planetBtn" onClick={this.handleModalOpen}>
+            View
+          </button>
         </div>
-        <Modal>
+        <Modal show={this.state.showModal} hide={this.handleModalClose}>
           <Planet url={userInfo.homeworld} />
         </Modal>
       </div>
