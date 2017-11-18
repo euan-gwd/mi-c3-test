@@ -41,6 +41,7 @@ const UserGridTable = styled.div`
   grid-auto-rows: 50px;
   box-sizing: border-box;
   align-items: center;
+  justify-items: center;
   border: 0.25px solid grey;
 `;
 

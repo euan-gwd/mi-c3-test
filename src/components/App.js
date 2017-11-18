@@ -7,7 +7,7 @@ class App extends Component {
   state = {};
   render() {
     return (
-      <AppWrapper>
+      <div>
         <Header>
           <Logo src={logo} alt="logo" />
           <Title>Mi-C3 FED App</Title>
@@ -15,24 +15,24 @@ class App extends Component {
         <Main>
           <UserList />
         </Main>
-      </AppWrapper>
+        <Footer />
+      </div>
     );
   }
 }
 
-const AppWrapper = styled.div`
-  text-align: center;
-`;
-
 const Header = styled.header`
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  height: 60px;
+  padding: 10px;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Logo = styled.img`
-  height: 80px;
+  height: 50px;
 `;
 
 const Title = styled.h1`
@@ -41,6 +41,14 @@ const Title = styled.h1`
 
 const Main = styled.main`
   font-size: 16px;
+  margin: 0 15px;
+`;
+
+const Footer = styled.footer`
+  background-color: #222;
+  height: 20px;
+  padding: 20px;
+  color: white;
 `;
 
 export default App;

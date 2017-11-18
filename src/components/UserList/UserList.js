@@ -67,10 +67,6 @@ class UserList extends Component {
   render() {
     return (
       <Container>
-        <NavBar>
-          {this.state.prevUrl ? <NavBtn onClick={this.handleFetchPrev}>&#x021D0;Previous 10</NavBtn> : <div />}
-          <NavBtn onClick={this.handleFetchNext}>Next 10 &#x021D2;</NavBtn>
-        </NavBar>
         <UserGridHeaderBar>
           <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'name')}>Name</HeaderBtn>
           <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'height')}>Height</HeaderBtn>
@@ -86,6 +82,10 @@ class UserList extends Component {
             <Loader>Loading...</Loader>
           </div>
         )}
+        <NavBar>
+          {this.state.prevUrl ? <NavBtn onClick={this.handleFetchPrev}>&#x021D0;Previous</NavBtn> : <div />}
+          <NavBtn onClick={this.handleFetchNext}>Next &#x021D2;</NavBtn>
+        </NavBar>
       </Container>
     );
   }
@@ -101,6 +101,7 @@ const NavBar = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0.25rem 0;
+  margin: 0;
 `;
 
 const NavBtn = styled.button`
