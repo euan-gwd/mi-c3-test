@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { format } from 'date-fns';
 import styled from 'styled-components';
-import Modal from '../../UI/Modal/Modal';
+import Modal from '../Modal/Modal';
 import Planet from '../Planet/Planet';
 
 class User extends Component {
