@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import User from './User/User';
-import Search from './Search/Search';
 import './UserList.css';
 
 class UserList extends Component {
@@ -22,24 +21,11 @@ class UserList extends Component {
     }
   };
 
-  handleChange = event => {
-    this.setState({ searchTerm: event.target.value });
-  };
-
-  handleSubmit = event => {
-    event.preventDefault();
-    const name = this.state.searchTerm;
-    const users = this.state.users;
-    const filteredUser = users.find(user => user.name === name);
-    console.log(filteredUser);
-  };
-
   render() {
     return (
       <div className="container">
         <nav className="navbar">
           <button className="navBtn">&#x021D0;Previous 10</button>
-          <Search handleSearch={this.handleChange} handleSubmit={this.handleSubmit} />
           <button className="navBtn" onClick={this.handleFetchNext}>
             Next 10 &#x021D2;
           </button>
