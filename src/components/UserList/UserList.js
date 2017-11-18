@@ -15,7 +15,7 @@ class UserList extends Component {
 
   render() {
     return (
-      <div className="table">
+      <div className="container">
         <div className="user-grid-headers">
           <div>Name</div>
           <div>Height</div>

@@ -30,7 +30,7 @@ class User extends Component {
           </button>
         </div>
         <Modal show={this.state.showModal} hide={this.handleModalClose}>
-          <Planet url={userInfo.homeworld} />
+          <Planet url={userInfo.homeworld} username={userInfo.name} />
         </Modal>
       </div>
     );

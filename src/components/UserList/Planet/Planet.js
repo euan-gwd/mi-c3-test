@@ -15,7 +15,7 @@ class Planet extends PureComponent {
     const { planetData } = this.state;
     return (
       <div>
-        <h2>Planet Details:</h2>
+        <h2>{this.props.username} Homeworld:</h2>
         <div className="planet-grid-headers">
           <div>Name</div>
           <div>Diameter</div>
