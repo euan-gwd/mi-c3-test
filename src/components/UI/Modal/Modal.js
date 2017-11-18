@@ -1,7 +1,7 @@
 import React from 'react';
 import Backdrop from './Backdrop';
 import styled from 'styled-components';
-import './Modal.css';
+import './ModalAnimate.css';
 
 const Modal = props => {
   return (
