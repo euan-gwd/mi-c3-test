@@ -47,13 +47,13 @@ class UserList extends Component {
           return 0;
         }
 
-        const varA = typeof a[key] === 'string' ? a[key].toUpperCase() : a[key];
-        const varB = typeof b[key] === 'string' ? b[key].toUpperCase() : b[key];
+        const itemA = typeof a[key] === 'string' ? a[key].toUpperCase() : a[key];
+        const itemB = typeof b[key] === 'string' ? b[key].toUpperCase() : b[key];
 
         let comparison = 0;
-        if (varA > varB) {
+        if (itemA > itemB) {
           comparison = 1;
-        } else if (varA < varB) {
+        } else if (itemA < itemB) {
           comparison = -1;
         }
         return order === 'desc' ? comparison * -1 : comparison;
