@@ -10,7 +10,7 @@ class App extends Component {
       <div>
         <Header>
           <Logo src={logo} alt="logo" />
-          <Title>Mi-C3 FED App</Title>
+          <Title>Mi-C3 FED Test App</Title>
         </Header>
         <Main>
           <UserList />
@@ -22,21 +22,22 @@ class App extends Component {
 }
 
 const Header = styled.header`
-  background-color: #222;
-  height: 60px;
+  background-color: lightgrey;
+  height: 80px;
   padding: 10px;
-  color: white;
+  color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const Logo = styled.img`
-  height: 50px;
+  height: 70px;
 `;
 
 const Title = styled.h1`
   font-size: 1.5em;
+  margin-left: 0.5rem;
 `;
 
 const Main = styled.main`
@@ -45,7 +46,7 @@ const Main = styled.main`
 `;
 
 const Footer = styled.footer`
-  background-color: #222;
+  background-color: lightgrey;
   height: 20px;
   padding: 20px;
   color: white;

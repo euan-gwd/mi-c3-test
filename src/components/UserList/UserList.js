@@ -73,7 +73,7 @@ class UserList extends Component {
           <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'mass')}>Mass</HeaderBtn>
           <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'created')}>Created</HeaderBtn>
           <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'edited')}>Edited</HeaderBtn>
-          <div>Planet</div>
+          <HeaderBtn>Planet</HeaderBtn>
         </UserGridHeaderBar>
         {this.state.loaded ? (
           <div>{this.state.users.map(user => <User key={user.name} userInfo={user} />)}</div>
@@ -115,7 +115,7 @@ const NavBtn = styled.button`
   font-size: 1rem;
 
   &:hover {
-    color: lightgreen;
+    color: #fda61e;
     background-color: transparent;
     text-decoration: underline;
     outline: 0;
@@ -138,7 +138,7 @@ const UserGridHeaderBar = styled.div`
   align-items: center;
   border: 1px solid black;
   box-shadow: 0 2px 5px 0 rgba(50, 50, 50, 0.75);
-  background-color: lightslategray;
+  background-color: #fda61e;
   color: whitesmoke;
 `;
 
@@ -147,13 +147,13 @@ const HeaderBtn = styled.button`
   border-radius: 0;
   padding: 0;
   margin: 0;
-  color: whitesmoke;
+  color: white;
   background-color: transparent;
   cursor: pointer;
   font-size: 1rem;
 
   &:hover {
-    color: lightgray;
+    color: darkgray;
     background-color: transparent;
     text-decoration: underline;
     outline: 0;
@@ -161,7 +161,8 @@ const HeaderBtn = styled.button`
   }
 
   &:active,
-  &:focus {
+  &:focus,
+  &:disabled {
     outline: 0;
     border: 0;
   }
