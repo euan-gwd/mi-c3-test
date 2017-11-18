@@ -1,24 +1,3 @@
-.user-grid-headers {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  height: 50px;
-  box-sizing: border-box;
-  align-items: center;
-  border: 1px solid black;
-  box-shadow: 0 2px 5px 0 rgba(50, 50, 50, 0.75);
-  background-color: lightslategray;
-  color: whitesmoke;
-}
-
-.user-grid-data {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(50px, 1fr));
-  grid-auto-rows: 50px;
-  box-sizing: border-box;
-  align-items: center;
-  border: 0.25px solid grey;
-}
-
 .planetBtn {
   border: 0;
   border-radius: 0;
