@@ -1,14 +1,16 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import './Planet.css';
 
-class Planet extends PureComponent {
+class Planet extends Component {
   state = { planetData: [] };
 
   componentDidMount() {
-    axios.get(this.props.url).then(res => {
-      this.setState({ planetData: res.data });
-    });
+    if (this.props.url) {
+      axios.get(this.props.url).then(res => {
+        this.setState({ planetData: res.data });
+      });
+    }
   }
 
   render() {
