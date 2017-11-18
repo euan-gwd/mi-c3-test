@@ -21,8 +21,8 @@ class User extends Component {
       <div>
         <UserGridTable>
           <div>{userInfo.name}</div>
-          <div>{userInfo.height}cm</div>
-          <div>{userInfo.mass}kg</div>
+          <div>{userInfo.height}</div>
+          <div>{userInfo.mass}</div>
           <div>{format(userInfo.created, 'DD/MM/YYYY HH:mm:ss')}</div>
           <div>{format(userInfo.edited, 'DD/MM/YYYY HH:mm:ss')}</div>
           <PlanetBtn onClick={this.handleModalOpen}>View</PlanetBtn>

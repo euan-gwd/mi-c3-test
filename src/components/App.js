@@ -10,7 +10,7 @@ class App extends Component {
       <AppWrapper>
         <Header>
           <Logo src={logo} alt="logo" />
-          <Title>Mi-C3 FED Test App</Title>
+          <Title>Mi-C3 FED App</Title>
         </Header>
         <Main>
           <UserList />
@@ -23,6 +23,7 @@ class App extends Component {
 
 const AppWrapper = styled.div`
   background-color: white;
+  box-sizing: border-box;
 `;
 
 const Header = styled.header`
