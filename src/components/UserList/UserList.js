@@ -16,6 +16,14 @@ class UserList extends Component {
   render() {
     return (
       <div className="container">
+        <nav className="navbar">
+          <button className="navBtn">&#x021D0;Back</button>
+          <label htmlFor="search">
+            Filter by Name
+            <input type="search" name="" id="search" />
+          </label>
+          <button className="navBtn">Next&#x021D2;</button>
+        </nav>
         <div className="user-grid-headers">
           <div>Name</div>
           <div>Height</div>
@@ -25,9 +33,6 @@ class UserList extends Component {
           <div>Planet</div>
         </div>
         <div>{this.state.users.map(user => <User key={user.name} userInfo={user} />)}</div>
-        <nav className="navbar">
-          <button className="nextBtn">Next Page>></button>
-        </nav>
       </div>
     );
   }
