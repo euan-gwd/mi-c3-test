@@ -4,7 +4,12 @@ import User from './User/User';
 import './UserList.css';
 
 class UserList extends Component {
-  state = { users: {}, nextUrl: null, loaded: false, sortBy: 'name', orderDir: 'asc' };
+  state = {
+    users: {},
+    nextUrl: null,
+    prevUrl: null,
+    loaded: false
+  };
 
   componentDidMount = () => {
     axios.get(`https://swapi.co/api/people`).then(res => {
@@ -16,7 +21,21 @@ class UserList extends Component {
     this.setState({ loaded: false });
     if (this.state.nextUrl) {
       axios.get(this.state.nextUrl).then(res => {
-        this.setState({ users: res.data.results, nextUrl: res.data.next, loaded: true });
+        this.setState({
+          users: res.data.results,
+          nextUrl: res.data.next,
+          prevUrl: res.data.previous || null,
+          loaded: true
+        });
+      });
+    }
+  };
+
+  handleFetchPrev = () => {
+    this.setState({ loaded: false });
+    if (this.state.prevUrl) {
+      axios.get(this.state.prevUrl).then(res => {
+        this.setState({ users: res.data.results, nextUrl: res.data.next, prevUrl: res.data.previous, loaded: true });
       });
     }
   };
@@ -49,7 +68,13 @@ class UserList extends Component {
     return (
       <div className="container">
         <nav className="navbar">
-          <button className="navBtn">&#x021D0;Previous 10</button>
+          {this.state.prevUrl ? (
+            <button className="navBtn" onClick={this.handleFetchPrev}>
+              &#x021D0;Previous 10
+            </button>
+          ) : (
+            <div />
+          )}
           <button className="navBtn" onClick={this.handleFetchNext}>
             Next 10 &#x021D2;
           </button>
