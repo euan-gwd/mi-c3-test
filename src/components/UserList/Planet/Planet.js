@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './Planet.css';
+import styled from 'styled-components';
 
 class Planet extends Component {
   state = { planetData: [] };
@@ -18,23 +18,44 @@ class Planet extends Component {
     return (
       <div>
         <h2>{this.props.username} Homeworld:</h2>
-        <div className="planet-grid-headers">
+        <PlanetGridHeaderBar>
           <div>Name</div>
           <div>Diameter</div>
           <div>Climate</div>
           <div>Terrain</div>
           <div>Population</div>
-        </div>
-        <div className="planet-grid-data">
+        </PlanetGridHeaderBar>
+        <PlanetGridTable>
           <div>{planetData.name}</div>
           <div>{planetData.diameter}</div>
           <div>{planetData.climate}</div>
           <div>{planetData.terrain}</div>
           <div>{planetData.population}</div>
-        </div>
+        </PlanetGridTable>
       </div>
     );
   }
 }
+
+const PlanetGridHeaderBar = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 50px;
+  box-sizing: border-box;
+  align-items: center;
+  border: 1px solid black;
+  box-shadow: 0 2px 5px 0 rgba(50, 50, 50, 0.75);
+  background-color: lightslategray;
+  color: whitesmoke;
+`;
+
+const PlanetGridTable = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, minmax(50px, 1fr));
+  grid-auto-rows: 50px;
+  box-sizing: border-box;
+  align-items: center;
+  border: 0.25px solid grey;
+`;
 
 export default Planet;

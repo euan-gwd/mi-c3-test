@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import User from './User/User';
-import './UserList.css';
 
 class UserList extends Component {
   state = {
@@ -66,47 +66,154 @@ class UserList extends Component {
 
   render() {
     return (
-      <div className="container">
-        <nav className="navbar">
-          {this.state.prevUrl ? (
-            <button className="navBtn" onClick={this.handleFetchPrev}>
-              &#x021D0;Previous 10
-            </button>
-          ) : (
-            <div />
-          )}
-          <button className="navBtn" onClick={this.handleFetchNext}>
-            Next 10 &#x021D2;
-          </button>
-        </nav>
-        <div className="user-grid-headers">
-          <button className="headerBtn" onClick={this.handleSortByColumn.bind(this, 'name')}>
-            Name
-          </button>
-          <button className="headerBtn" onClick={this.handleSortByColumn.bind(this, 'height')}>
-            Height
-          </button>
-          <button className="headerBtn" onClick={this.handleSortByColumn.bind(this, 'mass')}>
-            Mass
-          </button>
-          <button className="headerBtn" onClick={this.handleSortByColumn.bind(this, 'created')}>
-            Created
-          </button>
-          <button className="headerBtn" onClick={this.handleSortByColumn.bind(this, 'edited')}>
-            Edited
-          </button>
+      <Container>
+        <NavBar>
+          {this.state.prevUrl ? <NavBtn onClick={this.handleFetchPrev}>&#x021D0;Previous 10</NavBtn> : <div />}
+          <NavBtn onClick={this.handleFetchNext}>Next 10 &#x021D2;</NavBtn>
+        </NavBar>
+        <UserGridHeaderBar>
+          <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'name')}>Name</HeaderBtn>
+          <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'height')}>Height</HeaderBtn>
+          <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'mass')}>Mass</HeaderBtn>
+          <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'created')}>Created</HeaderBtn>
+          <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'edited')}>Edited</HeaderBtn>
           <div>Planet</div>
-        </div>
+        </UserGridHeaderBar>
         {this.state.loaded ? (
           <div>{this.state.users.map(user => <User key={user.name} userInfo={user} />)}</div>
         ) : (
           <div>
-            <div className="loader">Loading...</div>
+            <Loader>Loading...</Loader>
           </div>
         )}
-      </div>
+      </Container>
     );
   }
 }
+
+const Container = styled.div`
+  box-sizing: border-box;
+  margin: 15px;
+`;
+
+const NavBar = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0;
+`;
+
+const NavBtn = styled.button`
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  color: lightslategray;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+
+  &:hover {
+    color: lightgreen;
+    background-color: transparent;
+    text-decoration: underline;
+    outline: 0;
+    border: 0;
+  }
+
+  &:focus,
+  &:active {
+    color: lightslategray;
+    outline: 0;
+    border: 0;
+  }
+`;
+
+const UserGridHeaderBar = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  height: 50px;
+  box-sizing: border-box;
+  align-items: center;
+  border: 1px solid black;
+  box-shadow: 0 2px 5px 0 rgba(50, 50, 50, 0.75);
+  background-color: lightslategray;
+  color: whitesmoke;
+`;
+
+const HeaderBtn = styled.button`
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  color: whitesmoke;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+
+  &:hover {
+    color: lightgray;
+    background-color: transparent;
+    text-decoration: underline;
+    outline: 0;
+    border: 0;
+  }
+
+  &:active,
+  &:focus {
+    outline: 0;
+    border: 0;
+  }
+`;
+
+const Loader = styled.div`
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation-fill-mode: both;
+  animation: load7 1.8s infinite ease-in-out;
+  color: lightslategray;
+  font-size: 10px;
+  margin: 80px auto;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+
+  &::before,
+  &::after {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    animation-fill-mode: both;
+    animation: load7 1.8s infinite ease-in-out;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+  }
+
+  &::before {
+    left: -3.5em;
+    animation-delay: -0.32s;
+  }
+
+  &::after {
+    left: 3.5em;
+  }
+
+  @keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+`;
 
 export default UserList;
