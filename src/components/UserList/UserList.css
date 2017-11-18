@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.25rem 0;
 }
 
 .navBtn {
@@ -15,14 +16,23 @@
   padding: 0;
   margin: 0;
   color: lightslategray;
+  background-color: transparent;
   cursor: pointer;
   font-size: 1rem;
 }
 
-.navBtn:hover,
-.navBtn:focus,
-.navBtn:active {
+.navBtn:hover {
+  color: lightgreen;
+  background-color: transparent;
   text-decoration: underline;
+  outline: 0;
+  border: 0;
+}
+
+.navBtn:focus,
+.navBtn:active,
+.navBtn:visited {
+  color: lightslategray;
   outline: 0;
   border: 0;
 }
@@ -59,11 +69,16 @@
   font-size: 1rem;
 }
 
-.headerBtn:hover,
+.headerBtn:hover {
+  color: lightgray;
+  background-color: transparent;
+  text-decoration: underline;
+  outline: 0;
+  border: 0;
+}
+
 .headerBtn:focus,
 .headerBtn:active {
-  text-decoration: underline;
-  background-color: transparent;
   outline: 0;
   border: 0;
 }

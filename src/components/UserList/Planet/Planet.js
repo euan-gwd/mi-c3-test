@@ -6,7 +6,7 @@ class Planet extends Component {
   state = { planetData: [] };
 
   componentDidMount() {
-    if (this.props.url) {
+    if (this.props.url !== null) {
       axios.get(this.props.url).then(res => {
         this.setState({ planetData: res.data });
       });
