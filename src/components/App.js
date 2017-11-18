@@ -7,7 +7,7 @@ class App extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <AppWrapper>
         <Header>
           <Logo src={logo} alt="logo" />
           <Title>Mi-C3 FED Test App</Title>
@@ -16,16 +16,20 @@ class App extends Component {
           <UserList />
         </Main>
         <Footer />
-      </div>
+      </AppWrapper>
     );
   }
 }
 
+const AppWrapper = styled.div`
+  background-color: white;
+`;
+
 const Header = styled.header`
-  background-color: lightgrey;
   height: 80px;
   padding: 10px;
   color: #000;
+  background-color: lightgrey;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,8 +51,8 @@ const Main = styled.main`
 
 const Footer = styled.footer`
   background-color: lightgrey;
-  height: 20px;
-  padding: 20px;
+  height: 10px;
+  padding: 10px;
   color: white;
 `;
 

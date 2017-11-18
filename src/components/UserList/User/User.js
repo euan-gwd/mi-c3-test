@@ -50,7 +50,7 @@ const PlanetBtn = styled.button`
   border-radius: 0;
   padding: 0;
   margin: 0;
-  color: green;
+  color: grey;
   background-color: transparent;
   cursor: pointer;
   font-size: 1rem;
@@ -59,7 +59,7 @@ const PlanetBtn = styled.button`
   justify-self: center;
 
   &:hover {
-    color: lightgreen;
+    color: #fda61e;
     background-color: transparent;
     text-decoration: underline;
     outline: 0;

@@ -68,12 +68,12 @@ class UserList extends Component {
     return (
       <Container>
         <UserGridHeaderBar>
-          <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'name')}>Name</HeaderBtn>
-          <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'height')}>Height</HeaderBtn>
-          <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'mass')}>Mass</HeaderBtn>
-          <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'created')}>Created</HeaderBtn>
-          <HeaderBtn onClick={this.handleSortByColumn.bind(this, 'edited')}>Edited</HeaderBtn>
-          <HeaderBtn>Planet</HeaderBtn>
+          <HeaderBarBtn onClick={this.handleSortByColumn.bind(this, 'name')}>Name</HeaderBarBtn>
+          <HeaderBarBtn onClick={this.handleSortByColumn.bind(this, 'height')}>Height</HeaderBarBtn>
+          <HeaderBarBtn onClick={this.handleSortByColumn.bind(this, 'mass')}>Mass</HeaderBarBtn>
+          <HeaderBarBtn onClick={this.handleSortByColumn.bind(this, 'created')}>Created</HeaderBarBtn>
+          <HeaderBarBtn onClick={this.handleSortByColumn.bind(this, 'edited')}>Edited</HeaderBarBtn>
+          <HeaderBarItem>Planet</HeaderBarItem>
         </UserGridHeaderBar>
         {this.state.loaded ? (
           <div>{this.state.users.map(user => <User key={user.name} userInfo={user} />)}</div>
@@ -142,7 +142,7 @@ const UserGridHeaderBar = styled.div`
   color: whitesmoke;
 `;
 
-const HeaderBtn = styled.button`
+const HeaderBarBtn = styled.button`
   border: 0;
   border-radius: 0;
   padding: 0;
@@ -166,6 +166,16 @@ const HeaderBtn = styled.button`
     outline: 0;
     border: 0;
   }
+`;
+
+const HeaderBarItem = styled.button`
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  color: white;
+  background-color: transparent;
+  font-size: 1rem;
 `;
 
 const Loader = styled.div`

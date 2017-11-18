@@ -17,7 +17,7 @@ class Planet extends Component {
     const { planetData } = this.state;
     return (
       <div>
-        <h2>{this.props.username} Homeworld:</h2>
+        <Header>{this.props.username} Homeworld:</Header>
         <PlanetGridHeaderBar>
           <div>Name</div>
           <div>Diameter</div>
@@ -36,6 +36,9 @@ class Planet extends Component {
     );
   }
 }
+const Header = styled.h2`
+  text-align: center;
+`;
 
 const PlanetGridHeaderBar = styled.div`
   display: grid;
@@ -43,9 +46,11 @@ const PlanetGridHeaderBar = styled.div`
   height: 50px;
   box-sizing: border-box;
   align-items: center;
+  justify-items: center;
+
   border: 1px solid black;
   box-shadow: 0 2px 5px 0 rgba(50, 50, 50, 0.75);
-  background-color: lightslategray;
+  background-color: #fda61e;
   color: whitesmoke;
 `;
 
@@ -55,6 +60,7 @@ const PlanetGridTable = styled.div`
   grid-auto-rows: 50px;
   box-sizing: border-box;
   align-items: center;
+  justify-items: center;
   border: 0.25px solid grey;
 `;
 
