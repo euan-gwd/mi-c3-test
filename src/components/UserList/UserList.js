@@ -60,7 +60,8 @@ class UserList extends Component {
       };
     }
 
-    const sortedUsers = this.state.users.sort(compareValues(id));
+    const usersArray = [...this.state.users];
+    const sortedUsers = usersArray.sort(compareValues(id));
     this.setState({ users: sortedUsers });
   };
 
@@ -93,7 +94,9 @@ class UserList extends Component {
 
 const Container = styled.div`
   box-sizing: border-box;
-  margin: 15px;
+  min-width: 600px;
+  max-width: 1024px;
+  margin: 0.25rem auto;
 `;
 
 const NavBar = styled.nav`
@@ -135,6 +138,7 @@ const UserGridHeaderBar = styled.div`
   grid-template-columns: repeat(6, 1fr);
   height: 50px;
   box-sizing: border-box;
+  text-align: center;
   align-items: center;
   border: 1px solid black;
   box-shadow: 0 2px 5px 0 rgba(50, 50, 50, 0.75);
