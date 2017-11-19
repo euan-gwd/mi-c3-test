@@ -95,7 +95,7 @@ class UserList extends Component {
 const Container = styled.div`
   box-sizing: border-box;
   min-width: 600px;
-  max-width: 1024px;
+  max-width: 1200px;
   margin: 0.25rem auto;
 `;
 

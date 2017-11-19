@@ -16,11 +16,11 @@ const ModalContent = styled.div`
   position: fixed;
   z-index: 10;
   background-color: white;
-  width: 50%;
+  width: 75%;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 1px black;
   padding: 0.25rem;
-  left: 25vw;
+  left: 10vw;
   top: 25vh;
   box-sizing: border-box;
   transition: all 0.3s ease-out;
